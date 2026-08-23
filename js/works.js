@@ -23,7 +23,7 @@ const WORKS = [
   {
     id: "work-1",
     title: "Do not go gentle into that good night",
-    images: ["images/dylan.jpg"],
+    image: ["images/dylan.jpg"],
     englishText: "Do not go gentle into that good night,\nOld age should burn and rave at close of day;\nRage, rage against the dying of the light.\n不要温和地走进那个良夜，\n老年应当在日暮时燃烧咆哮；\n怒斥，怒斥光明的消逝",
     materials: "",
     thoughts: "",
@@ -33,7 +33,7 @@ const WORKS = [
   {
     id: "work-2",
     title: "",
-    images: ["images/Les étoiles.jpg"],
+    image: ["images/Les étoiles.jpg"],
     englishText: "Je voudrais les mille yeux de la nuit éternelle\nPour te contempler seul.\n\"我想要永恒之夜的千只眼睛，以便独独观赏你。\"",
     materials: "",
     thoughts: "",
@@ -43,7 +43,7 @@ const WORKS = [
   {
     id: "work-3",
     title: "Mozart",
-    images: ["images/Mozart.jpg"],
+    image: ["images/Mozart.jpg"],
     englishText: "Irgendwo wird immer getanzt.\n血液中流淌着香槟 鬓边别着一朵纸玫瑰",
     materials: "",
     thoughts: "",
@@ -53,7 +53,7 @@ const WORKS = [
   {
     id: "work-4",
     title: "",
-    images: ["images/Neruda.jpg"],
+    image: ["images/Neruda.jpg"],
     englishText: "Déjame que te hable también con tu silencio claro como una lámpara, simple como un anillo.\n并且让我借你的沉默与你说话\n你的沉默明亮如灯，简单如指环",
     materials: "",
     thoughts: "",
