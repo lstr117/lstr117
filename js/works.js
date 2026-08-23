@@ -11,8 +11,8 @@
  *    title       : work title
  *    image       : "images/yourfilename.jpg"  ← your image path
  *    englishText : the calligraphic text
- *    materials   : pen, ink, paper used
- *    thoughts    : personal reflections on the piece
+ *    materials   : pen, ink, paper used (leave "" to hide)
+ *    thoughts    : personal reflections (leave "" to hide)
  *    date        : upload date, YYYY-MM-DD
  *    tag         : "Textura Quadrata" | "Italic" |
  *                  "Old English & German text & Modern Gothic" | "Others"
@@ -23,12 +23,7 @@ const WORKS = [
     id: "work-1",
     title: "Do not go gentle into that good night",
     image: "images/dylan.jpg",
-    englishText: "Do not go gentle into that good night,
-    不要温和地走进那个良夜，
-    Old age should burn and rave at close of day;
-    老年应当在日暮时燃烧咆哮；
-    Rage, rage against the dying of the light.
-    怒斥，怒斥光明的消逝",
+    englishText: "Do not go gentle into that good night,\n不要温和地走进那个良夜，\nOld age should burn and rave at close of day;\n老年应当在日暮时燃烧咆哮；\nRage, rage against the dying of the light.\n怒斥，怒斥光明的消逝",
     materials: "",
     thoughts: "",
     date: "2026-08-23",
