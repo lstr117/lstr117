@@ -23,7 +23,17 @@ const WORKS = [
     id: "work-1",
     title: "Do not go gentle into that good night",
     image: "images/dylan.jpg",
-    englishText: "Do not go gentle into that good night,\n不要温和地走进那个良夜，\nOld age should burn and rave at close of day;\n老年应当在日暮时燃烧咆哮；\nRage, rage against the dying of the light.\n怒斥，怒斥光明的消逝",
+    englishText: "Do not go gentle into that good night,\nOld age should burn and rave at close of day;\nRage, rage against the dying of the light.\n不要温和地走进那个良夜，\n老年应当在日暮时燃烧咆哮；\n怒斥，怒斥光明的消逝",
+    materials: "",
+    thoughts: "",
+    date: "2026-08-23",
+    tag: "Textura Quadrata"
+  }
+  {
+    id: "work-2",
+    title: "Les étoiles",
+    image: "images/Les étoiles.jpg",
+    englishText: "Je voudrais les mille yeux de la nuit éternelle\nPour te contempler seul.\n\"我想要永恒之夜的千只眼睛，以便独独观赏你。\"",
     materials: "",
     thoughts: "",
     date: "2026-08-23",
