@@ -26,7 +26,7 @@ const WORKS = [
     englishText: "Do not go gentle into that good night,\n不要温和地走进那个良夜，\nOld age should burn and rave at close of day;\n老年应当在日暮时燃烧咆哮；\nRage, rage against the dying of the light.\n怒斥，怒斥光明的消逝",
     materials: "",
     thoughts: "",
-    date: "2020-02-06",
+    date: "2026-08-23",
     tag: "Textura Quadrata"
   },
   {
@@ -36,7 +36,7 @@ const WORKS = [
     englishText: "Je voudrais les mille yeux de la nuit éternelle\n\nPour te contempler seul.\n\n\"我想要永恒之夜的千只眼睛，以便独独观赏你。\"",
     materials: "",
     thoughts: "",
-    date: "2021-02-17",
+    date: "2026-08-23",
     tag: "Textura Quadrata"
   }
 ];

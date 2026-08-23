@@ -65,7 +65,7 @@
           '<div class="thumb"><img src="' + escapeAttr(w.image) + '" alt="' + escapeAttr(w.title) + '" loading="lazy" /></div>' +
           '<div class="meta">' +
             '<div class="tag">' + escapeHtml(w.tag || "") + "</div>" +
-            "<h3>" + escapeHtml(w.title) + "</h3>" +
+            "<h3>" + (w.title ? escapeHtml(w.title) : "") + "</h3>" +
             '<p class="excerpt">' + escapeHtml(w.englishText) + "</p>" +
             '<div class="date">' + formatDate(w.date) + "</div>" +
           "</div>" +
@@ -90,7 +90,7 @@
       '<img class="modal-image" src="' + escapeAttr(w.image) + '" alt="' + escapeAttr(w.title) + '" />' +
       '<div class="modal-body">' +
         '<div class="tag">' + escapeHtml(w.tag || "") + "</div>" +
-        "<h2>" + escapeHtml(w.title) + "</h2>" +
+        (w.title ? "<h2>" + escapeHtml(w.title) + "</h2>" : "") +
         '<div class="date">Posted ' + formatDate(w.date) + "</div>" +
         '<div class="section-label">Text</div>' +
         '<p class="english-text">' + escapeHtml(w.englishText).replace(/\n/g, "<br>") + "</p>";
