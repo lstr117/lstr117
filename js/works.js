@@ -39,4 +39,14 @@ const WORKS = [
     date: "2021-02-12",
     tag: "Textura Quadrata"
   }
+  {
+    id: "work-3",
+    title: "Mozart",
+    image: "images/Mozart.jpg",
+    englishText: "Irgendwo wird immer getanzt.\n血液中流淌着香槟 鬓边别着一朵纸玫瑰",
+    materials: "",
+    thoughts: "",
+    date: "2021-02-12",
+    tag: "Textura Quadrata"
+  }
 ];
