@@ -88,6 +88,6 @@ const WORKS = [
     materials: "",
     thoughts: "",
     date: "2020-02-12",
-    tag: "Textura Quadrata"
+    tag: "Others"
   }
 ];
