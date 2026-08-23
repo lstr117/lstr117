@@ -63,11 +63,21 @@ const WORKS = [
   {
     id: "work-5",
     title: "",
-    images: ["images/Wilde_1.jpg"],
+    image: ["images/Wilde_1.jpg"],
     englishText: "With freedom, books, flowers, and the moon.\nWho could not be happy?\n拥有自由、书籍、鲜花和月亮的人，怎么会不快乐？",
     materials: "",
     thoughts: "",
     date: "2020-07-15",
+    tag: "Textura Quadrata"
+  },
+  {
+    id: "work-6",
+    title: "",
+    image: ["images/Borges_1.jpg"],
+    englishText: "Resbalo por tu tarde como el cansancio por la piedad de un declive.\n我滑下你的暮色\n如厌倦滑下一道斜坡的虔诚",
+    materials: "",
+    thoughts: "",
+    date: "2020-03-30",
     tag: "Textura Quadrata"
   }
 ];
