@@ -85,7 +85,7 @@
     var w = works.find(function (x) { return x.id === id; });
     if (!w) return;
 
-    modalEl.innerHTML =
+    var html =
       '<button class="modal-close" aria-label="关闭">&times;</button>' +
       '<img class="modal-image" src="' + escapeAttr(w.image) + '" alt="' + escapeAttr(w.title) + '" />' +
       '<div class="modal-body">' +
@@ -93,12 +93,23 @@
         "<h2>" + escapeHtml(w.title) + "</h2>" +
         '<div class="date">Posted ' + formatDate(w.date) + "</div>" +
         '<div class="section-label">Text</div>' +
-        '<p class="english-text">' + escapeHtml(w.englishText).replace(/\n/g, "<br>") + "</p>" +
+        '<p class="english-text">' + escapeHtml(w.englishText).replace(/\n/g, "<br>") + "</p>";
+
+    if (w.materials && w.materials.trim()) {
+      html +=
         '<div class="section-label">Materials</div>' +
-        '<p class="materials">' + escapeHtml(w.materials) + "</p>" +
+        '<p class="materials">' + escapeHtml(w.materials) + "</p>";
+    }
+
+    if (w.thoughts && w.thoughts.trim()) {
+      html +=
         '<div class="section-label">Notes</div>' +
-        '<p class="thoughts">' + escapeHtml(w.thoughts) + "</p>" +
-      "</div>";
+        '<p class="thoughts">' + escapeHtml(w.thoughts) + "</p>";
+    }
+
+    html += "</div>";
+
+    modalEl.innerHTML = html;
 
     modalOverlay.classList.add("open");
     document.body.style.overflow = "hidden";
