@@ -21,9 +21,14 @@
 const WORKS = [
   {
     id: "work-1",
-    title: "",
+    title: "Do not go gentle into that good night",
     image: "images/dylan.jpg",
-    englishText: "",
+    englishText: "Do not go gentle into that good night,
+不要温和地走进那个良夜，
+Old age should burn and rave at close of day;
+老年应当在日暮时燃烧咆哮；
+Rage, rage against the dying of the light.
+怒斥，怒斥光明的消逝",
     materials: "",
     thoughts: "",
     date: "2026-08-23",
