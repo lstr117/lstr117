@@ -73,11 +73,21 @@ const WORKS = [
   {
     id: "work-6",
     title: "",
-    image: ["images/Borges_1.jpg"],
+    image: "images/Borges_1.jpg",
     englishText: "Resbalo por tu tarde como el cansancio por la piedad de un declive.\n我滑下你的暮色\n如厌倦滑下一道斜坡的虔诚",
     materials: "",
     thoughts: "",
     date: "2020-03-30",
+    tag: "Textura Quadrata"
+  },
+  {
+    id: "work-7",
+    title: "",
+    image: "images/Borges_2.jpg",
+    englishText: "I offer you the loyalty of a man who has never been loyal.\n我给你一个从未有过信仰人的忠诚。",
+    materials: "",
+    thoughts: "",
+    date: "2020-02-12",
     tag: "Textura Quadrata"
   }
 ];
