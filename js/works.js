@@ -59,5 +59,15 @@ const WORKS = [
     thoughts: "",
     date: "2021-11-11",
     tag: "Textura Quadrata"
+  },
+  {
+    id: "work-5",
+    title: "",
+    images: ["images/Wilde_1.jpg"],
+    englishText: "With freedom, books, flowers, and the moon.\nWho could not be happy?\n拥有自由、书籍、鲜花和月亮的人，怎么会不快乐？",
+    materials: "",
+    thoughts: "",
+    date: "2020-07-15",
+    tag: "Textura Quadrata"
   }
 ];
