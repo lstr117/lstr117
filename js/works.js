@@ -38,7 +38,7 @@ const WORKS = [
     thoughts: "",
     date: "2021-02-12",
     tag: "Textura Quadrata"
-  }
+  },
   {
     id: "work-3",
     title: "Mozart",
