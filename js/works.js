@@ -79,15 +79,5 @@ const WORKS = [
     thoughts: "",
     date: "2020-03-30",
     tag: "Textura Quadrata"
-  },
-  {
-    id: "work-7",
-    title: "",
-    image: "images/Borges_2.jpg",
-    englishText: "I offer you the loyalty of a man who has never been loyal.\n我给你一个从未有过信仰人的忠诚。",
-    materials: "",
-    thoughts: "",
-    date: "2020-02-12",
-    tag: "Others"
   }
 ];
