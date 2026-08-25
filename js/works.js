@@ -157,7 +157,7 @@ const WORKS = [
     title: "City of stars",
     image: ["images/laland.jpg"],
     englishText: "Are you shining just for me?",
-    materials: "笔：百乐鸭嘴笔橙色\n 墨：诗色<空境>\n 纸：云萱纸背面",
+    materials: "笔：百乐鸭嘴笔橙色\n墨：诗色<空境>\n纸：云萱纸背面",
     thoughts: "",
     date: "2026-08-22",
     tag: "Textura Quadrata"
@@ -168,7 +168,7 @@ const WORKS = [
     title: "ECHOES OF THE EYE",
     image: ["images/outer wilds after.jpg"],
     englishText: "One eye called out.\nTwo eyes locked it away.\nThree eyes sought to find it.\nFour eyes witnessed the end.",
-    materials: "笔：百乐鸭嘴笔橙色\n 墨：写乐仓敷<美星的夜空>\n 纸：宝虹木浆水彩纸32K中粗",
+    materials: "笔：百乐鸭嘴笔橙色\n墨：写乐仓敷<美星的夜空>\n纸：宝虹木浆水彩纸32K中粗",
     thoughts: "",
     date: "2026-08-23",
     tag: "Textura Quadrata"
@@ -179,7 +179,7 @@ const WORKS = [
     title: "",
     image: ["images/Borges_2.jpg"],
     englishText: "Cuentan que Ulises, harto de prodigios.\n人们说尤利西斯厌倦了奇迹。",
-    materials: "笔：百乐鸭嘴笔橙色\n 墨：写乐仓敷<美星的夜空>\n 纸：云龙纸背面",
+    materials: "笔：百乐鸭嘴笔橙色\n墨：写乐仓敷<美星的夜空>\n纸：云龙纸背面",
     thoughts: "",
     date: "2026-08-24",
     tag: "Textura Quadrata"
