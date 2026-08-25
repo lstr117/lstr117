@@ -111,7 +111,7 @@ const WORKS = [
   {
     id: "work-9",
     title: "Le Petit Prince",
-    image: ["images/Prince.jpg"],
+    image: ["images/prince.jpg"],
     englishText: "如果有人钟爱着一朵独一无二的、盛开在浩瀚星海里的花。\n那么，当他抬头仰望繁星时，便会心满意足。\n他会告诉自己：“我心爱的花在那里，在那颗遥远的星星上。”",
     materials: "",
     thoughts: "",
