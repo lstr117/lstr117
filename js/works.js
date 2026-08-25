@@ -177,7 +177,7 @@ const WORKS = [
   {
     id: "work-15",
     title: "",
-    image: ["images/Borges_2"],
+    image: ["images/Borges_2.jpg"],
     englishText: "Cuentan que Ulises, harto de prodigios.\n人们说尤利西斯厌倦了奇迹。",
     materials: "笔：百乐鸭嘴笔橙色\n 墨：写乐仓敷<美星的夜空>\n 纸：云龙纸背面",
     thoughts: "",
