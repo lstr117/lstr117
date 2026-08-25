@@ -24,6 +24,13 @@
 
   var activeTag = "all";
 
+  /* ---------- Helper: get images array ---------- */
+  function getImages(w) {
+    if (Array.isArray(w.images) && w.images.length) return w.images;
+    if (w.image) return [w.image];
+    return [];
+  }
+
   /* ---------- Build filter bar ---------- */
   function buildFilters() {
     var tags = works
@@ -60,9 +67,10 @@
     emptyEl.style.display = "none";
 
     galleryEl.innerHTML = list.map(function (w) {
+      var imgs = getImages(w);
       return (
         '<article class="work-card" data-id="' + escapeAttr(w.id) + '">' +
-          '<div class="thumb"><img src="' + escapeAttr(w.image) + '" alt="' + escapeAttr(w.title) + '" loading="lazy" /></div>' +
+          '<div class="thumb"><img src="' + escapeAttr(imgs[0] || "") + '" alt="' + escapeAttr(w.title) + '" loading="lazy" /></div>' +
           '<div class="meta">' +
             '<div class="tag">' + escapeHtml(w.tag || "") + "</div>" +
             "<h3>" + (w.title ? escapeHtml(w.title) : "") + "</h3>" +
@@ -80,14 +88,39 @@
     });
   }
 
-  /* ---------- Modal ---------- */
+  /* ---------- Modal with carousel ---------- */
+  var currentWork = null;
+  var currentIndex = 0;
+  var carouselStartX = 0;
+  var carouselCurrentX = 0;
+  var isDragging = false;
+
   function openModal(id) {
     var w = works.find(function (x) { return x.id === id; });
     if (!w) return;
+    currentWork = w;
+    currentIndex = 0;
+
+    var imgs = getImages(w);
+    var hasMultiple = imgs.length > 1;
 
     var html =
       '<button class="modal-close" aria-label="关闭">&times;</button>' +
-      '<img class="modal-image" src="' + escapeAttr(w.image) + '" alt="' + escapeAttr(w.title) + '" />' +
+      '<div class="carousel' + (hasMultiple ? " has-multiple" : "") + '">' +
+        '<button class="carousel-btn prev" aria-label="上一张">&#10094;</button>' +
+        '<div class="carousel-viewport">' +
+          '<div class="carousel-track" style="transform: translateX(0)">';
+
+    imgs.forEach(function (src) {
+      html += '<img class="carousel-slide" src="' + escapeAttr(src) + '" alt="" />';
+    });
+
+    html +=
+          '</div>' +
+        '</div>' +
+        '<button class="carousel-btn next" aria-label="下一张">&#10095;</button>' +
+        (hasMultiple ? '<div class="carousel-dots"></div>' : "") +
+      '</div>' +
       '<div class="modal-body">' +
         '<div class="tag">' + escapeHtml(w.tag || "") + "</div>" +
         (w.title ? "<h2>" + escapeHtml(w.title) + "</h2>" : "") +
@@ -98,7 +131,7 @@
     if (w.materials && w.materials.trim()) {
       html +=
         '<div class="section-label">Materials</div>' +
-        '<p class="materials">' + escapeHtml(w.materials) + "</p>";
+        '<p class="materials">' + escapeHtml(w.materials).replace(/\n/g, "<br>") + "</p>";
     }
 
     if (w.thoughts && w.thoughts.trim()) {
@@ -111,13 +144,112 @@
 
     modalEl.innerHTML = html;
 
+    // Build dots
+    if (hasMultiple) {
+      var dotsEl = modalEl.querySelector(".carousel-dots");
+      imgs.forEach(function (_, i) {
+        var dot = document.createElement("span");
+        dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+        dot.setAttribute("data-index", i);
+        dotsEl.appendChild(dot);
+      });
+    }
+
+    // Bind carousel controls
+    if (hasMultiple) {
+      modalEl.querySelector(".carousel-btn.prev").addEventListener("click", function () {
+        goToSlide(currentIndex - 1);
+      });
+      modalEl.querySelector(".carousel-btn.next").addEventListener("click", function () {
+        goToSlide(currentIndex + 1);
+      });
+
+      modalEl.querySelectorAll(".carousel-dot").forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          goToSlide(parseInt(dot.getAttribute("data-index"), 10));
+        });
+      });
+
+      // Touch / drag
+      var viewport = modalEl.querySelector(".carousel-viewport");
+      viewport.addEventListener("touchstart", onDragStart, { passive: true });
+      viewport.addEventListener("touchmove", onDragMove, { passive: true });
+      viewport.addEventListener("touchend", onDragEnd);
+      viewport.addEventListener("mousedown", onDragStart);
+      viewport.addEventListener("mousemove", onDragMove);
+      viewport.addEventListener("mouseup", onDragEnd);
+      viewport.addEventListener("mouseleave", onDragEnd);
+    }
+
     modalOverlay.classList.add("open");
     document.body.style.overflow = "hidden";
+  }
+
+  function goToSlide(index) {
+    if (!currentWork) return;
+    var imgs = getImages(currentWork);
+    var total = imgs.length;
+    if (!total) return;
+
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+
+    currentIndex = index;
+
+    var track = modalEl.querySelector(".carousel-track");
+    if (track) {
+      track.style.transform = "translateX(" + (-index * 100) + "%)";
+    }
+
+    var dots = modalEl.querySelectorAll(".carousel-dot");
+    dots.forEach(function (d, i) {
+      d.classList.toggle("active", i === index);
+    });
+  }
+
+  function onDragStart(e) {
+    isDragging = true;
+    var pt = e.touches ? e.touches[0] : e;
+    carouselStartX = pt.clientX;
+    carouselCurrentX = pt.clientX;
+    var track = modalEl.querySelector(".carousel-track");
+    if (track) track.style.transition = "none";
+  }
+
+  function onDragMove(e) {
+    if (!isDragging) return;
+    var pt = e.touches ? e.touches[0] : e;
+    carouselCurrentX = pt.clientX;
+    var viewport = modalEl.querySelector(".carousel-viewport");
+    var track = modalEl.querySelector(".carousel-track");
+    if (!viewport || !track) return;
+    var deltaX = carouselCurrentX - carouselStartX;
+    var offsetPercent = (deltaX / viewport.offsetWidth) * 100;
+    track.style.transform = "translateX(" + (-currentIndex * 100 + offsetPercent) + "%)";
+  }
+
+  function onDragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    var track = modalEl.querySelector(".carousel-track");
+    if (track) track.style.transition = "";
+
+    var deltaX = carouselCurrentX - carouselStartX;
+    var threshold = 50; // px
+    if (deltaX < -threshold) {
+      goToSlide(currentIndex + 1);
+    } else if (deltaX > threshold) {
+      goToSlide(currentIndex - 1);
+    } else {
+      goToSlide(currentIndex); // snap back
+    }
   }
 
   function closeModal() {
     modalOverlay.classList.remove("open");
     modalEl.innerHTML = "";
+    currentWork = null;
+    currentIndex = 0;
     document.body.style.overflow = "";
   }
 
@@ -126,7 +258,10 @@
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && modalOverlay.classList.contains("open")) closeModal();
+    if (!modalOverlay.classList.contains("open")) return;
+    if (e.key === "Escape") closeModal();
+    else if (e.key === "ArrowLeft") goToSlide(currentIndex - 1);
+    else if (e.key === "ArrowRight") goToSlide(currentIndex + 1);
   });
 
   /* ---------- Helpers ---------- */
