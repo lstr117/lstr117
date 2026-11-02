@@ -174,16 +174,6 @@ const WORKS = [
     tag: "Textura Quadrata"
   },
 
-  {
-    id: "work-15",
-    title: "",
-    image: ["images/Borges_2.jpg"],
-    englishText: "Cuentan que Ulises, harto de prodigios.\n人们说尤利西斯厌倦了奇迹。",
-    materials: "笔：百乐鸭嘴笔橙色\n墨：写乐仓敷<美星的夜空>\n纸：云龙纸背面",
-    thoughts: "",
-    date: "2026-08-24",
-    tag: "Textura Quadrata"
-  },
     {
     id: "work-15",
     title: "",
