@@ -16,7 +16,7 @@
  *    thoughts    : personal reflections (leave "" to hide)
  *    date        : upload date, YYYY-MM-DD
  *    tag         : "Textura Quadrata" | "Italic" |
- *                  "Old English & German text & Modern Gothic" | "Others"
+ *                  "Modern Gothic" | "Others"
  * ============================================================ */
 
 const WORKS = [
@@ -94,7 +94,7 @@ const WORKS = [
     materials: "",
     thoughts: "",
     date: "2020-03-19",
-    tag: "Old English & German text & Modern Gothic"
+    tag: "Modern Gothic"
   },
 
   {
@@ -215,7 +215,7 @@ const WORKS = [
     materials: "笔：百乐鸭嘴笔橙色\n墨：诗色<绀琉璃>\n纸：宝虹木浆中粗",
     thoughts: "",
     date: "2026-10-19",
-    tag: "Others"
+    tag: "Rotunda"
   }
 ];
 ];
