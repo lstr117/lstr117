@@ -214,7 +214,7 @@ const WORKS = [
     englishText: "Per correr miglior acque alza le vele omai la navicella del mio ingegno.\n为了驶向更好的水域，我的思想之舟如今扬起了风帆。",
     materials: "笔：百乐鸭嘴笔橙色\n墨：诗色<绀琉璃>\n纸：宝虹木浆中粗",
     thoughts: "",
-    date: "2026-10-19",
+    date: "2026-11-01",
     tag: "Rotunda"
   }
 ];
