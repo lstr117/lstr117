@@ -218,4 +218,3 @@ const WORKS = [
     tag: "Rotunda"
   }
 ];
-];
