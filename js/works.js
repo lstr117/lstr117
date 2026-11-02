@@ -183,5 +183,49 @@ const WORKS = [
     thoughts: "",
     date: "2026-08-24",
     tag: "Textura Quadrata"
+  },
+    {
+    id: "work-15",
+    title: "",
+    image: ["images/Borges_2.jpg"],
+    englishText: "Cuentan que Ulises, harto de prodigios.\n人们说尤利西斯厌倦了奇迹。",
+    materials: "笔：百乐鸭嘴笔橙色\n墨：写乐仓敷<美星的夜空>\n纸：云龙纸背面",
+    thoughts: "",
+    date: "2026-08-24",
+    tag: "Textura Quadrata"
+  },
+
+  {
+    id: "work-16",
+    title: "",
+    image: ["images/Neruda_1.jpg"],
+    englishText: "Inclinado en las tardes tiro mis tristes redes \na tus ojos oceánicos.\n俯视着黄昏，我把悲伤的网\n撒向你海洋般的眼睛。",
+    materials: "笔：百乐鸭嘴笔橙色\n墨：诗色<绀琉璃>\n纸：遵爵风琴本木浆中粗",
+    thoughts: "",
+    date: "2026-10-17",
+    tag: "Textura Quadrata"
+  },
+
+  {
+    id: "work-17",
+    title: "",
+    image: ["images/Neruda_2.jpg"],
+    englishText: "mi soledad que da vueltas los brazos como un náufrago.\n我的孤独，它像溺水者那样挥动着臂膀。",
+    materials: "笔：百乐鸭嘴笔橙色\n墨：诗色<绀琉璃>\n纸：遵爵风琴本木浆中粗",
+    thoughts: "",
+    date: "2026-10-18",
+    tag: "Textura Quadrata"
+  },
+
+  {
+    id: "work-18",
+    title: "",
+    image: ["images/Divina_2.jpg"],
+    englishText: "Per correr miglior acque alza le vele omai la navicella del mio ingegno.\n为了驶向更好的水域，我的思想之舟如今扬起了风帆。",
+    materials: "笔：百乐鸭嘴笔橙色\n墨：诗色<绀琉璃>\n纸：宝虹木浆中粗",
+    thoughts: "",
+    date: "2026-10-19",
+    tag: "Textura Quadrata"
   }
+];
 ];
